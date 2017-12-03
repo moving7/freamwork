@@ -9,7 +9,7 @@ class wei
     * 用来储存临时加载的类
     * $classMap
     */
-    public static $classMap = array();
+    public static $classMap = array('');
 
     static public function run()
     {
