@@ -11,6 +11,8 @@ class wei
     */
     public static $classMap = array('');
 
+    public $assign;
+
     static public function run()
     {
         /*加载路由类*/
@@ -20,9 +22,9 @@ class wei
         /*方法名*/
         $action = $route->action;
         /*控制器文件(路径)*/
-        $controller_file = APP.'/controller/'.$controllerClass.'Controller.php';
+        $controller_file = APP.'/controllers/'.$controllerClass.'Controller.php';
         /*实例化控制器*/
-        $ctrlClass = '\\'.MODULE.'\controller\\'.$controllerClass.'Controller';
+        $ctrlClass = '\\'.MODULE.'\controllers\\'.$controllerClass.'Controller';
         /*判断控制器是否存在*/
         if(is_file($controller_file)) {
             /*加载控制器文件*/
@@ -55,6 +57,25 @@ class wei
             } else {
                 return false;
             }
+        }
+    }
+
+    public function assign($name,$val)
+    {
+        /*处理传值数据*/
+        $this->assign[$name] = $val;
+    }
+
+    public function display($v_file)
+    {
+        /*定义V层视图文件*/
+        $v_file = APP.'/views/'.$v_file;
+        /*检测*/
+        if(is_file($v_file)) {
+            /*将数组打散存入对应变量*/
+            extract($this->assign);
+            /*加载文件*/
+            include $v_file;
         }
     }
 }
