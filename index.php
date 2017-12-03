@@ -13,6 +13,8 @@ define('DS','/');
 define('CORE',WEI.'/core');
 /*项目文件目录*/
 define('APP',WEI.'/apps');
+/*定义模块*/
+define('MODULE','apps');
 /*调错模式*/
 define('DEBUG',true);
 /*进行判断调错模式是否开启*/

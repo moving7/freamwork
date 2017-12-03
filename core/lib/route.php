@@ -25,10 +25,12 @@ class route
             if(isset($path_arr[0])) {
                 $this->controller = $path_arr[0];
             }
+            /*消除参数*/
             unset($path_arr[0]);
             /*校验第二个参数*/
             if(isset($path_arr[1])) {
                 $this->action = $path_arr[1];
+                /*消除参数*/
                 unset($path_arr[1]);
             } else {
                 $this->action = 'index';
