@@ -13,8 +13,8 @@ class wei
 
     static public function run()
     {
-        $route = new \core\route();
-        $route->show();
+        /*加载路由类*/
+        $route = new \core\lib\route();
     }
 
     /*自动加载类库*/
