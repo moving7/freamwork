@@ -7,6 +7,8 @@
  */
 /*定义框架目录*/
 define('WEI',realpath('./'));
+/*自定义*/
+define('DS','/');
 /*定义框架核心文件目录*/
 define('CORE',WEI.'/core');
 /*项目文件目录*/
@@ -23,6 +25,10 @@ if(DEBUG) {
 include CORE.'/common/function.php';
 /*加载核心文件*/
 include CORE.'/wei.php';
+
+/*自动加载类*/
+spl_autoload_register('\core\wei::load');
+
 /*启动框架*/
 \core\wei::run();
 
