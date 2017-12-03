@@ -15,6 +15,26 @@ class wei
     {
         /*加载路由类*/
         $route = new \core\lib\route();
+        /*控制器名*/
+        $controllerClass = $route->controller;
+        /*方法名*/
+        $action = $route->action;
+        /*控制器文件(路径)*/
+        $controller_file = APP.'/controller/'.$controllerClass.'Controller.php';
+        /*实例化控制器*/
+        $ctrlClass = '\\'.MODULE.'\controller\\'.$controllerClass.'Controller';
+        /*判断控制器是否存在*/
+        if(is_file($controller_file)) {
+            /*加载控制器文件*/
+            include $controller_file;
+            /*实例化控制器*/
+            $controller = new $ctrlClass();
+            /*执行对应方法*/
+            $controller->$action();
+        } else {
+            /*抛出异常*/
+            throw new \Exception('找不到控制器'.$controllerClass);
+        }
     }
 
     /*自动加载类库*/
