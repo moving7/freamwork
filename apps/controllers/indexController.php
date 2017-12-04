@@ -19,6 +19,12 @@ class indexController extends wei
     }
     public function show()
     {
-        echo '加载成功';
+//        echo '加载成功';
+        $temp = \core\lib\conf::get_conf('DEFAULT_CONTROLLER','route');
+        $temps = \core\lib\conf::get_conf('DEFAULT_ACTION','route');
+        print_r($temps);
+        $model = new \core\lib\model();
+        $sql = 'SELECT * FROM 115_users';
+        $data = $model->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
     }
 }

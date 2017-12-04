@@ -33,7 +33,7 @@ class route
                 /*消除参数*/
                 unset($path_arr[1]);
             } else {
-                $this->action = 'index';
+                $this->action = conf::get_conf('DEFAULT_ACTION','route');
             }
             /*把URL多余的部分转换成GET的参数进行处理*/
             $count_arr = count($path_arr) + 2;
@@ -49,8 +49,8 @@ class route
             // p($_GET);
 
         } else {
-            $this->controller = 'index';
-            $this->action = 'index';
+            $this->controller = conf::get_conf('DEFAULT_CONTROLLER','route');
+            $this->action = conf::get_conf('DEFAULT_ACTION','route');
         }
     }
     public function show()
