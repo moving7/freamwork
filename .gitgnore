@@ -1,6 +1,5 @@
 .idea
 nbproject
-.env
 /core/config/database.php
 #/core/config/*
 #!/core/config/database_default.php
