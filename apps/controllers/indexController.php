@@ -8,23 +8,6 @@ class indexController extends wei
 {
     public function index()
     {
-//        p('it is index');
-        $data = ['code'=>200];
-//        $model = new \core\lib\model();
-//        $sql = 'SELECT * FROM 115_users';
-//        $data = $model->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
-        $this->assign('data',$data);
-        $this->assign('title',['code'=>404]);
-        $this->display('index.html');
-    }
-    public function show()
-    {
-//        echo '加载成功';
-        $temp = \core\lib\conf::get_conf('DEFAULT_CONTROLLER','route');
-        $temps = \core\lib\conf::get_conf('DEFAULT_ACTION','route');
-        print_r($temps);
-        $model = new \core\lib\model();
-        $sql = 'SELECT * FROM 115_users';
-        $data = $model->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
+        $this->display('index/index.html');
     }
 }

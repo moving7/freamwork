@@ -78,7 +78,9 @@ class wei
         /*检测*/
         if(is_file($v_file)) {
             /*将数组打散存入对应变量*/
-            extract($this->assign);
+            if($this->assign) {
+                extract($this->assign);
+            }
             /*加载文件*/
             include $v_file;
         }

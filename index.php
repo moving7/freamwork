@@ -17,8 +17,16 @@ define('APP',WEI.'/apps');
 define('MODULE','apps');
 /*调错模式*/
 define('DEBUG',true);
+/*加载composer类*/
+include "vendor/autoload.php";
 /*进行判断调错模式是否开启*/
 if(DEBUG) {
+    $whoops = new \Whoops\Run;
+    $errorTitle = 'Error';
+    $option = new \Whoops\Handler\PrettyPageHandler();
+    $option->setPageTitle($errorTitle);
+    $whoops->pushHandler($option);
+    $whoops->register();
     ini_set('display_error','ON');
 } else {
     ini_set('display_error','OFF');

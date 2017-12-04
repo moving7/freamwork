@@ -45,17 +45,9 @@ class route
                 }
                 $i = $i + 2;
             }
-            /*打印数据*/
-            // p($_GET);
-
         } else {
             $this->controller = conf::get_conf('DEFAULT_CONTROLLER','route');
             $this->action = conf::get_conf('DEFAULT_ACTION','route');
         }
-    }
-    public function show()
-    {
-        // echo 35;
-        p($_SERVER);
     }
 }
