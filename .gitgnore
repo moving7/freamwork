@@ -1,5 +1,5 @@
 .idea
 nbproject
-/core/config
+/core/config/*
 !/core/config/database_default.php
 !/core/config/route.php
