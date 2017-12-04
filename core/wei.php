@@ -2,6 +2,8 @@
 
 namespace core;
 
+use \core\lib\log;
+
 class wei
 {
     /**
@@ -15,6 +17,8 @@ class wei
 
     static public function run()
     {
+        /*加载日志类*/
+        log::init();
         /*加载路由类*/
         $route = new \core\lib\route();
         /*控制器名*/
@@ -33,6 +37,7 @@ class wei
             $controller = new $ctrlClass();
             /*执行对应方法*/
             $controller->$action();
+            log::log('Controller:'.$controllerClass.'action:'.$action);
         } else {
             /*抛出异常*/
             throw new \Exception('找不到控制器'.$controllerClass);
