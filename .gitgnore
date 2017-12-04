@@ -1,3 +1,5 @@
 .idea
 nbproject
-./core/config/database.php
+/core/config
+!/core/config/database_default.php
+!/core/config/route.php
