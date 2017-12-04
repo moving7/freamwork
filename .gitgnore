@@ -1,3 +1,3 @@
 .idea
 nbproject
-database.php
+./core/config/database.php
