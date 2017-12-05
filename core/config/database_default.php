@@ -3,10 +3,12 @@
  * 数据库信息
  */
 return [
-    'DB_TYPE' => '',
-    'DB_HOST' => '',
-    'DB_NAME' => '',
-    'DB_PORT' => '',
-    'DB_USER' => '',
-    'DB_PWD' => '',
+    'database_type' => 'mysql',
+    'database_name' => 'name',
+    'server' => 'localhost',
+    'username' => 'your_username',
+    'password' => 'your_password',
+    'charset' => 'utf8',
+    'port' => 3306,
+    'prefix' => 'PREFIX_',
 ];
