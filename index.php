@@ -16,7 +16,7 @@ define('APP',WEI.'/apps');
 /*定义模块*/
 define('MODULE','apps');
 /*调错模式*/
-define('DEBUG',true);
+define('DEBUG',false);
 /*进行判断调错模式是否开启*/
 if(DEBUG) {
     /*判断composer类*/
