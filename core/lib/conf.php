@@ -6,6 +6,7 @@ class conf
 {
     /*缓存配置项的静态变量*/
     static public $conf = [];
+
     /*获取配置*/
     static public function get_conf($name,$file)
     {
@@ -18,7 +19,6 @@ class conf
         if(isset(self::$conf[$file])) {
             return self::$conf[$file][$name];
         } else {
-            /*p(1);*/
             $path = WEI . '/core/config/' . $file . '.php';
             if (is_file($path)) {
                 $conf = include $path;
@@ -33,13 +33,13 @@ class conf
             }
         }
     }
+
     /*获取所有相关配置*/
     static public function get_all($file)
     {
         if(isset(self::$conf[$file])) {
             return self::$conf[$file];
         } else {
-            /*p(1);*/
             $path = WEI . '/core/config/' . $file . '.php';
             if (is_file($path)) {
                 $conf = include $path;

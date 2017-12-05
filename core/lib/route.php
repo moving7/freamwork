@@ -6,11 +6,12 @@ class route
 {
     /*控制器*/
     public $controller;
+
     /*方法*/
     public $action;
+
     public function __construct()
     {
-        // echo 'Route load OK';
         /**
         * 1.隐藏index.php
         * 2.获取URL 参数部分

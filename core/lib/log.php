@@ -12,6 +12,7 @@ class log
      * 2.写入日志
      */
     static $class;
+
     /*初始化方法*/
     static public function init()
     {

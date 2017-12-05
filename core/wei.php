@@ -2,7 +2,7 @@
 
 namespace core;
 
-use \core\lib\log;
+use core\lib\log;
 
 class wei
 {
@@ -74,7 +74,7 @@ class wei
     public function display($v_file)
     {
         /*定义V层视图文件*/
-        $v_file = APP.'/views/'.$v_file;
+        $v_file = APP.'/views/'.$v_file.'.html';
         /*检测*/
         if(is_file($v_file)) {
             /*将数组打散存入对应变量*/
