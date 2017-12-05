@@ -43,4 +43,3 @@ spl_autoload_register('\core\wei::load');
 
 /*启动框架*/
 \core\wei::run();
-

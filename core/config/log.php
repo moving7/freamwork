@@ -5,6 +5,6 @@
 return [
     'DRIVER' => 'file',
     'OPTION' => [
-        'PATH' => WEI.'/log/'
+        'PATH' => WEI.'/storage/log/'
     ],
 ];

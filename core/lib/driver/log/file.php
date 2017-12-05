@@ -17,6 +17,7 @@ class file
         $this->path = $log['PATH'].date('Y-m-d');
     }
 
+    /*写入日志*/
     public function logs($msg,$file = 'log')
     {
         /**

@@ -1,4 +1,4 @@
-<?php 
+<?php
 function p($var)
 {
     if(is_bool($var)) {

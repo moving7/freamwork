@@ -8,6 +8,6 @@ class mysql
 {
     public function logs($name)
     {
-        p($name);
+
     }
 }

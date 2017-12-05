@@ -2,7 +2,7 @@
 
 namespace core;
 
-use \core\lib\log;
+use core\lib\log;
 
 class wei
 {
@@ -73,17 +73,19 @@ class wei
 
     public function display($v_file)
     {
+        $load = $v_file.'.html';
         /*定义V层视图文件*/
-        $v_file = APP.'/views/'.$v_file;
+        $v_file = APP.'/views/'.$load;
         /*检测*/
         if(is_file($v_file)) {
-            /*将数组打散存入对应变量*/
-            if($this->assign) {
-                extract($this->assign);
-            }
-            /*加载文件*/
-            include $v_file;
+            \Twig_Autoloader::register();
+            $loader = new \Twig_Loader_Filesystem(APP.'/views');
+            $twig = new \Twig_Environment($loader, array(
+                'cache' => WEI.'/storage/views',
+                'auto_reload' => true,
+            ));
+            $template = $twig->load($load);
+            $template->display($this->assign?$this->assign:[]);
         }
     }
 }
-

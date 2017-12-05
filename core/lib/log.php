@@ -12,6 +12,7 @@ class log
      * 2.写入日志
      */
     static $class;
+
     /*初始化方法*/
     static public function init()
     {
@@ -21,6 +22,7 @@ class log
         self::$class = new $class;
     }
 
+    /*写入日志*/
     static public function log($name,$file = 'log')
     {
         self::$class->logs($name,$file);
