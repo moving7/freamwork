@@ -22,7 +22,7 @@ class wei
         /*加载路由类*/
         $route = new \core\lib\route();
         /*控制器名*/
-        $controllerClass = $route->controller;
+        $controllerClass = ucfirst($route->controller);
         /*方法名*/
         $action = $route->action;
         /*控制器文件(路径)*/
@@ -82,7 +82,7 @@ class wei
             $loader = new \Twig_Loader_Filesystem(APP.'/views');
             $twig = new \Twig_Environment($loader, array(
                 'cache' => WEI.'/storage/views',
-                'auto_reload' => true,
+                'auto_reload' => DEBUG,
             ));
             $template = $twig->load($load);
             $template->display($this->assign?$this->assign:[]);

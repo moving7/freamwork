@@ -5,6 +5,8 @@
  * 2.加载函数库
  * 3.启动框架
  */
+/*定义header*/
+header('content-type:text/html;charset=utf-8');
 /*定义框架目录*/
 define('WEI',realpath('./'));
 /*自定义*/
@@ -17,18 +19,18 @@ define('APP',WEI.'/apps');
 define('MODULE','apps');
 /*调错模式*/
 define('DEBUG',false);
+if(file_exists('vendor/autoload.php')) {
+    include_once "vendor/autoload.php";
+}
 /*进行判断调错模式是否开启*/
 if(DEBUG) {
     /*判断composer类*/
-    if(file_exists('vendor/autoload.php')) {
-        include_once "vendor/autoload.php";
-        $whoops = new \Whoops\Run;
-        $errorTitle = 'Error';
-        $option = new \Whoops\Handler\PrettyPageHandler();
-        $option->setPageTitle($errorTitle);
-        $whoops->pushHandler($option);
-        $whoops->register();
-    }
+    $whoops = new \Whoops\Run;
+    $errorTitle = 'Error';
+    $option = new \Whoops\Handler\PrettyPageHandler();
+    $option->setPageTitle($errorTitle);
+    $whoops->pushHandler($option);
+    $whoops->register();
     ini_set('display_error','ON');
 } else {
     ini_set('display_error','OFF');
