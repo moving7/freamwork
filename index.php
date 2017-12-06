@@ -19,11 +19,13 @@ define('APP',WEI.'/apps');
 define('MODULE','apps');
 /*调错模式*/
 define('DEBUG',false);
+if(file_exists('vendor/autoload.php')) {
+    include_once "vendor/autoload.php";
+}
 /*进行判断调错模式是否开启*/
 if(DEBUG) {
     /*判断composer类*/
-    if(file_exists('vendor/autoload.php')) {
-        include_once "vendor/autoload.php";
+    if(file_exists('vendor/filp')) {
         $whoops = new \Whoops\Run;
         $errorTitle = 'Error';
         $option = new \Whoops\Handler\PrettyPageHandler();
