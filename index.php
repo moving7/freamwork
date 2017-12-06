@@ -25,12 +25,14 @@ if(file_exists('vendor/autoload.php')) {
 /*进行判断调错模式是否开启*/
 if(DEBUG) {
     /*判断composer类*/
-    $whoops = new \Whoops\Run;
-    $errorTitle = 'Error';
-    $option = new \Whoops\Handler\PrettyPageHandler();
-    $option->setPageTitle($errorTitle);
-    $whoops->pushHandler($option);
-    $whoops->register();
+    if(file_exists('vendor/filp')) {
+        $whoops = new \Whoops\Run;
+        $errorTitle = 'Error';
+        $option = new \Whoops\Handler\PrettyPageHandler();
+        $option->setPageTitle($errorTitle);
+        $whoops->pushHandler($option);
+        $whoops->register();
+    }
     ini_set('display_error','ON');
 } else {
     ini_set('display_error','OFF');
