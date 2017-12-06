@@ -17,12 +17,14 @@ class wei
 
     static public function run()
     {
+        /*设置时区*/
+        ini_set('timezone','PRC');
         /*加载日志类*/
         log::init();
         /*加载路由类*/
         $route = new \core\lib\route();
         /*控制器名*/
-        $controllerClass = $route->controller;
+        $controllerClass = ucfirst($route->controller);
         /*方法名*/
         $action = $route->action;
         /*控制器文件(路径)*/

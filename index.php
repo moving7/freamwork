@@ -5,6 +5,8 @@
  * 2.加载函数库
  * 3.启动框架
  */
+/*声明Header*/
+header('content-type:text/html;charset=utf-8');
 /*定义框架目录*/
 define('WEI',realpath('./'));
 /*自定义*/
