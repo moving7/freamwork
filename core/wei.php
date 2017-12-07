@@ -3,6 +3,7 @@
 namespace core;
 
 use core\lib\log;
+use core\lib\conf;
 
 class wei
 {
@@ -18,7 +19,7 @@ class wei
     static public function run()
     {
         /*设置时区*/
-        ini_set('date.timezone', 'PRC');
+        ini_set('date.timezone', conf::get_conf('TIMEZONE', 'conf'));
         /*加载日志类*/
         log::init();
         /*加载路由类*/
