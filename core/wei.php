@@ -18,7 +18,7 @@ class wei
     static public function run()
     {
         /*设置时区*/
-        ini_set('timezone','PRC');
+        ini_set('date.timezone', 'PRC');
         /*加载日志类*/
         log::init();
         /*加载路由类*/
