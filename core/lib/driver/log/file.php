@@ -25,7 +25,7 @@ class file
          */
         /*判断路径是否存在*/
         if(!is_dir($this->path)) {
-            mkdir($this->path,'0777',true);
+            mkdir($this->path, 0777, true);
         }
         return file_put_contents($this->path.'/'.$file.'.php',date('Y-m-d H:i:s').' '.json_encode($msg).PHP_EOL,FILE_APPEND);
     }
