@@ -33,9 +33,9 @@ if(DEBUG) {
         $whoops->pushHandler($option);
         $whoops->register();
     }
-    ini_set('display_error','ON');
+    ini_set('display_errors', 'ON');
 } else {
-    ini_set('display_error','OFF');
+    ini_set('display_errors', 'OFF');
 }
 /*加载函数库*/
 include CORE.'/common/function.php';
